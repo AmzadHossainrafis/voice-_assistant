@@ -1,17 +1,17 @@
 import pyttsx3  # https://www.youtube.com/watch?v=BwkwwxPHeSU #https://pyttsx3.readthedocs.io/en/latest/engine.html
 import datetime as datetime
 import speech_recognition as sr  # https://realpython.com/python-speech-recognition/
-
+from settings import Settings
 
 class Assistant():
     def __init__(self):
         self.r = sr.Recognizer()  # This is recognizer class
-
+        self.settings = Settings()
         self.engine = pyttsx3.init('sapi5')
         # pick a voice from the list mail and female verison
         self.voice = self.engine.getProperty('voices')
         # from the voice list select the type 0 for male and 1 for female
-        self.engine.setProperty('voice', self.voice[1].id)
+        self.engine.setProperty('voice', self.voice[self.settings.voice_type].id)
         rate = self.engine.getProperty('rate')
         self.engine.setProperty('rate', rate-20)  # make the voice  slower
         # function that speak out
@@ -29,7 +29,7 @@ class Assistant():
 
     '''
     this function need to be transfer to faatures.py 
-    
+
     '''
     def greeting(self):
         """this function find out time and greet you accordingly """
@@ -76,6 +76,6 @@ class Assistant():
 
 if __name__ == '__main__':
     p=Assistant()
-    # p.speak("hello everyone this is a test")
-    # p.takecmd()
+    p.speak("hello everyone this is a test")
+    p.takecmd()
 #sperak("hello this is the first test ")
