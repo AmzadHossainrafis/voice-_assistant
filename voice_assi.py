@@ -42,7 +42,7 @@ class Assistant():
         """this function for taking  voice command """
 
         with sr.Microphone() as source:  # activate Mirophone as a input scource
-            self.speak("litenig .... ")
+            self.speak("lesening .... ")
             self.r.phrase_threshold = 1  # wait command for 1 second to take command
             audio = self.r.listen(source=source)
         try:

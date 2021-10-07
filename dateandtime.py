@@ -1,10 +1,9 @@
-# import pyjoke
-import wikipedia
+
 import datetime as datetime
 from voice_assi import Assistant
 
 
-class Features():
+class DateandTime():
     def __init__(self):
         self.VA = Assistant()
         self.settings = self.VA.settings
@@ -39,7 +38,7 @@ class Features():
 
 
 if __name__ == '__main__':
-    a=Features()
+    a=DateandTime()
     a.date()
     a.time()
     a.greeting()
