@@ -1,7 +1,9 @@
 import pyttsx3  # https://www.youtube.com/watch?v=BwkwwxPHeSU #https://pyttsx3.readthedocs.io/en/latest/engine.html
 import datetime as datetime
 import speech_recognition as sr  # https://realpython.com/python-speech-recognition/
+import sys 
 from settings import Settings
+
 
 class Assistant():
     def __init__(self):
@@ -13,7 +15,7 @@ class Assistant():
         # from the voice list select the type 0 for male and 1 for female
         self.engine.setProperty('voice', self.voice[self.settings.voice_type].id)
         rate = self.engine.getProperty('rate')
-        self.engine.setProperty('rate', rate-20)  # make the voice  slower
+        self.engine.setProperty('rate',self.settings.voice_rate)  # make the voice  slower
         # function that speak out
 
 
@@ -31,21 +33,7 @@ class Assistant():
     this function need to be transfer to faatures.py 
 
     '''
-    def greeting(self):
-        """this function find out time and greet you accordingly """
-
-        hour = int(datetime.datetime.now().hour)  # just bring out the hour
-        if hour >= 0 and hour < 12:
-            self.speak("Good Morning Sir !")
-
-        elif hour >= 12 and hour < 18:
-            self.speak("Good Afternoon Sir !")
-
-        else:
-            self.speak("Good Evening Sir !")
-        self.speak(" I am your voice assistant ")
-        self.speak("how can i help you ")
-
+   
 
 
 
