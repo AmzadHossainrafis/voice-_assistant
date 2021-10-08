@@ -5,12 +5,15 @@ from voice_assi import Assistant
 
 
 class Wiki():
+    """this class will  browse web and search web and also can make wiki summary"""
     def __init__(self):
-        self.VA= Assistant()
-        self.settings = self.VA.settings
+        self.VA= Assistant()  #Assistant object 
+        self.settings = self.VA.settings #taking satting 
 
 
     def wiki(self,query):
+        """ wiki search and make summary """
+
         self.VA.speak("Searching wikipedia..")
         replace=query.replace("wikipedia","")
         result=wikipedia.summary(replace)
@@ -20,8 +23,9 @@ class Wiki():
 
 
     def brow_(self,query):
+        """web search and browsing """
         # t=self.VA.takecmd()
-        replace=query.replace("browse","")
+        replace=query.replace("browse","www.")
         self.VA.speak(f'visiting {replace}')
         webbrowser.open(replace)
         
