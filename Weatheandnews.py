@@ -26,9 +26,9 @@ class weatherandNews():
             self.tem=((self.api_data['main']['temp'])-273.15)
             self.VA.speak(f"the weathe of {city_name} is {round(self.tem)} degree")
     
-    def news(self,subject):
+    def news(self,*subject):
         date=datetime.datetime.today().strftime("%Y-%M-%d")
-        self.test=f'https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&apiKey={self.new_api_link}'
+        self.test=f'https://newsapi.org/v2/everything?domains=bbc-news.com,thenextweb.com&apiKey={self.new_api_link}'
         self.newapi=f'https://newsapi.org/v2/everything?q={subject}&from={date}&sortBy=popularity&apiKey={self.new_api_link}'
         self.new_req=requests.get(self.test)
         self.new_data=self.new_req.json()
@@ -37,7 +37,7 @@ class weatherandNews():
         self.artical=self.new_data['articles']
         for i in self.artical:
             self.result.append(i['title'])
-        self.VA.speak(" here are to top news from techcrunch ")
+        self.VA.speak(" here are to top news from bbc ")
         for i in range(5):
             print(i+1,self.result[i])
             self.VA.speak(str(self.result[i]))
