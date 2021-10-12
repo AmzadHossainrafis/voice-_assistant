@@ -1,5 +1,5 @@
 
-import datetime as datetime
+ 
 from voice_assi import Assistant
 
 
@@ -40,8 +40,8 @@ class DateandTime():
 if __name__ == '__main__':
     a=DateandTime()
     a.date()
-    a.time()
-    a.greeting()
+    # a.time()
+    # a.greeting()
 
 
         

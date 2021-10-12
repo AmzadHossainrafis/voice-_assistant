@@ -30,8 +30,8 @@ class Wiki():
         webbrowser.open(replace)
         
 
-if __name__ == '__main__':
-    a=Wiki()
-    a.brow_()
+# if __name__ == '__main__':
+#     # a=Wiki()
+#     # a.wiki("cristiano ronaldo")
 
         

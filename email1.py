@@ -60,11 +60,12 @@ class MailandCont():
 
 
     def sendsms(self):
+        """problem : having prb to recieve the msg but msg are properly send """
         reciver=self.find()
         test_msg="this is a test masg "
         m=reciver["user_phone"]
         client=Client(self.sid,self.ath)
-        message=client.messages.create(to="+880 1728118376",from_=self.Tnumber,body=test_msg)
+        message=client.messages.create(to="+8801913091194",from_=self.Tnumber,body=test_msg)
         print(message.sid)
         
 if __name__ == '__main__':
