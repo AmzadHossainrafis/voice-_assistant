@@ -23,11 +23,19 @@ class Wiki():
 
 
     def brow_(self,query):
-        """web search and browsing """
+        """ web search and browsing """
         # t=self.VA.takecmd()
         replace=query.replace("browse","www.")
         self.VA.speak(f'visiting {replace}')
         webbrowser.open(replace)
+
+    def google_search_(self,query):
+        """ web search and browsing """
+        # t=self.VA.takecmd()
+        replace=query.replace("google search","")
+        self.VA.speak(f'visiting {replace}')
+        webbrowser.open(replace)
+        
         
 
 # if __name__ == '__main__':
