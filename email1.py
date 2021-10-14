@@ -16,12 +16,13 @@ class MailandCont():
         self.sid=self.setting.Sid
         self.ath=self.setting.ath
         self.Tnumber=self.setting.Tnumber
+
         
         
         
     
     def find(self):
-        self.filename="info.csv"
+        self.filename=self.setting.csv_dir
         with open(self.filename,'r',encoding="utf8") as f:
             reader = csv.reader(f)
 
@@ -54,7 +55,7 @@ class MailandCont():
         server.starttls()
         server.login(self.email,self.user_password)
         server.sendmail(self.email,str(m),"this is a spam msg don't reply")
-        print(" mail is send to ")
+        print(f" mail is send to{m} ")
         server.quit()
 
 
@@ -70,6 +71,4 @@ class MailandCont():
         
 if __name__ == '__main__':
     test=MailandCont("Mobasshir")
-    e=test.find()
-    print(e["user_phone"])
-    test.sendsms()
+    test.sendmail()
