@@ -85,6 +85,11 @@ class main():
                 msgg=self.VA.takecmd()
                 self.mail.sendmail(msg=msgg)
                 del self.mail
+            elif " tell me a joke" in speach:
+                self.joke=Wiki()
+                r=self.joke.get_jokes()
+                self.VA.speak(r)
+                del self.joke
 
 
 
