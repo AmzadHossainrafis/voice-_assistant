@@ -29,13 +29,6 @@ class Assistant():
 
 
 
-    '''
-    this function need to be transfer to faatures.py 
-
-    '''
-   
-
-
 
 
     def takecmd(self):
