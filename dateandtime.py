@@ -37,11 +37,11 @@ class DateandTime():
         self.VA.speak(query)
 
 
-if __name__ == '__main__':
-    a=DateandTime()
-    a.date()
-    # a.time()
-    # a.greeting()
+# if __name__ == '__main__':
+#     # a=DateandTime()
+#     # a.date()
+#     # # a.time()
+#     # # a.greeting()
 
 
         
