@@ -42,8 +42,7 @@ class main():
                 self.weather.news()
                 del self.weather
             
-            elif "mail" in speach:
-                pass
+        
             elif "wikipedia" in speach:
                 self.brw=Wiki()
                 self.brw.wiki(speach)
@@ -85,6 +84,7 @@ class main():
                 msgg=self.VA.takecmd()
                 self.mail.sendmail(msg=msgg)
                 del self.mail
+
             elif " tell me a joke" in speach:
                 self.joke=Wiki()
                 r=self.joke.get_jokes()
