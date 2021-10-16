@@ -18,13 +18,16 @@ class weatherandNews():
         self.api_req=requests.get(self.api_link)
         self.api_data=self.api_req.json()
         
-        print(self.api_data)
+        # print(self.api_data)
 
         if self.api_data["cod"]=="404":
             print('having problem to get the data')
         else:
             self.tem=((self.api_data['main']['temp'])-273.15)
+            print(f"the weathe of {city_name} is {round(self.tem)} degree")
             self.VA.speak(f"the weathe of {city_name} is {round(self.tem)} degree")
+
+
     
     def news(self,*subject):
         date=datetime.datetime.today().strftime("%Y-%M-%d")
@@ -43,6 +46,6 @@ class weatherandNews():
             self.VA.speak(str(self.result[i]))
 
 
-if __name__ == '__main__':
-    test=weatherandNews()
-    print(test.news("corona"))
+# if __name__ == '__main__':
+#     test=weatherandNews()
+#     print(test.news("corona"))

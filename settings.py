@@ -6,6 +6,10 @@ class Settings():
         self.address = "Bangladesh"
         self.voice_type = 1
         self.voice_rate = -70
+        #data
+        self.note_dir="data/note.txt"
+        self.csv_dir="data/info,csv"
+
         # email
         self.user_email = "azhossain144@gmail.com"
         self.user_pass = "test@mail124"
@@ -17,3 +21,7 @@ class Settings():
         self.wkey = "2d2672febc5f011c7a2202682fd7f228"
         # new api
         self.new_key = "9b7317aceef9491388bd5cedc8af8493"
+        # google api
+        
+         
+        # gmail api 
