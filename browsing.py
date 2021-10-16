@@ -1,6 +1,7 @@
 import wikipedia
 import webbrowser
 from voice_assi import Assistant
+import pyjokes as pyjokes
 
 
 
@@ -35,7 +36,10 @@ class Wiki():
         replace=query.replace("google search","")
         self.VA.speak(f'visiting {replace}')
         webbrowser.open(replace)
-        
+    
+    def get_jokes(self):
+        return pyjokes.get_joke()
+
         
 
 # if __name__ == '__main__':
