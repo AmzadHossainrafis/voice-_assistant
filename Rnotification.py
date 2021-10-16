@@ -9,8 +9,8 @@ class Rm():
         self.VA=Assistant()
         self.settings=Settings()
 
-    def notfy(self,title,message,timout ):
-        notification.notify(title=title,message=message,app_icon=None,timout=10)
+    def notfy(self,title,message,time):
+        notification.notify(title=title,message=message,app_icon=None,timout=time)
 
     def writenote(self):
         self.VA.speak("what is the note title")
