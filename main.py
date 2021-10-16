@@ -10,6 +10,10 @@ class main():
     def __init__(self):
         self.VA=Assistant()
         self.setting=self.VA.settings 
+        self.DT=DateandTime()
+        self.DT.greeting()
+        del self.DT
+
 
 
     def run(self):
@@ -21,11 +25,13 @@ class main():
                 speak=self.obj.date()
                 self.VA.speak(speak)
                 del self.obj
+
             elif "time" in speach:
                 self.obj=DateandTime()
                 speak=self.obj.time()
                 self.VA.speak(speak)
                 del self.obj
+
             elif "weather" in speach:
                 self.weather=weatherandNews()
                 self.weather.weather('Dhaka')
@@ -59,8 +65,38 @@ class main():
                 self.RMD=Rm()
                 self.RMD.readnote('data/note')
                 del self.RMD
+
+            elif "notfy me" in speach:
+                self.RMD=Rm()
+                self.VA.speak("what is the titale ")
+                x=self.VA.takecmd().lower()
+                self.VA.speak("what is the message")
+                y=self.VA.takecmd().lower()
+                self.VA.speak("when you want the notification")
+                z=self.VA.takecmd().lower()
+                # convert the time 
+
+            elif "send mail " in speach:
+                self.VA.speak(" to who you wanna send mail ")
+                name=self.VA.takecmd().lower()
+                self.mail=MailandCont(name)
+                self.mail.sendmail()
+                self.VA.speak("what you want to say")
+                msgg=self.VA.takecmd()
+                self.mail.sendmail(msg=msgg)
+                del self.mail
+
+
+
+
+
+                
+
+
+
+
             else:
-                break
+                continue
 
 
 

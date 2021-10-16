@@ -1,7 +1,4 @@
-import pandas as pd
 import csv 
-import requests
-
 import smtplib
 from voice_assi import Assistant
 from twilio.rest import Client
@@ -46,7 +43,7 @@ class MailandCont():
 
 
 #this fucntion take name as arg 
-    def sendmail(self):
+    def sendmail(self,msg):
 
 
         reciver=self.find()
@@ -54,7 +51,7 @@ class MailandCont():
         server=smtplib.SMTP_SSL("smtp.gmail.com",465)
         server.starttls()
         server.login(self.email,self.user_password)
-        server.sendmail(self.email,str(m),"this is a spam msg don't reply")
+        server.sendmail(self.email,str(m),str(msg))
         print(f" mail is send to{m} ")
         server.quit()
 
