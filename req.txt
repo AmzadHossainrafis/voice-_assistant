@@ -1,0 +1,8 @@
+pyjokes
+wikipedia
+SpeechRecognition
+twilio
+requests 
+PyAudio
+wolframaplha
+pyttsx3
