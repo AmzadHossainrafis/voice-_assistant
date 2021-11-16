@@ -21,6 +21,7 @@ class Settings():
         self.wkey = "2d2672febc5f011c7a2202682fd7f228"
         # new api
         self.new_key = "9b7317aceef9491388bd5cedc8af8493"
+        self.wef_key= "JRVAH8-UX2V75PQQJ"
         # google api
         
          
