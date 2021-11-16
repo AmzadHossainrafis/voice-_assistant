@@ -5,6 +5,8 @@ from Rnotification import Rm
 from browsing import Wiki
 from Weatheandnews import weatherandNews
 from browsing import Wiki
+import wolframalpha
+from shortwincom import Wincmd
 
 class main():
     def __init__(self):
@@ -85,23 +87,63 @@ class main():
                 self.mail.sendmail(msg=msgg)
                 del self.mail
 
-            elif " tell me a joke" in speach:
+            elif "tell me a joke" in speach:
                 self.joke=Wiki()
                 r=self.joke.get_jokes()
                 self.VA.speak(r)
                 del self.joke
+            elif 'exit' in query:
+                self.VA.speak("Thanks for giving me your time")
+                exit()
+            
+            
+            elif "calculate" in query:
+             
+                app_id = str(self.setting.wef_key)
+                client = wolframalpha.Client(app_id)
+                indx = query.lower().split().index('calculate')
+                query = query.split()[indx + 1:]
+                res = client.query(' '.join(query))
+                answer = next(res.results).text
+                print("The answer is " + answer)
+                speak("The answer is " + answer)
 
 
+            elif "turn off window" in speach:
+                self.obj=DateandTime()
+                speak=self.obj.shutdown()
+                self.VA.speak(speak)
+                del self.obj
+            elif "take picture " in speach:
+                self.obj= Wincmd()
+                self.obj.camera()
+                del self.obj
+
+            elif "empty the recycle bin" in speach:
+                self.obj= Wincmd()
+                self.obj.empyrec()
+                del self.obj
+
+            elif "log out" in speach:
+                self.obj= Wincmd()
+                self.obj.log_out()
+                del self.obj
+            elif "restart" in speach:
+                self.obj= Wincmd()
+                self.obj.restr()
+                del self.obj
+
+            elif "shutdown" in speach:
+                self.obj= Wincmd()
+                self.obj.shutdown()
+                del self.obj
+
+            elif "voice assistant close" in speach:
+                self.VA.speak("voice assistant is closing")
+                self.runing=False
 
 
-
-                
-
-
-
-
-            else:
-                continue
+            
 
 
 
